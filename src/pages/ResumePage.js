@@ -131,6 +131,7 @@ const ResumePage = () => {
                 <span className="bg-primary-dark text-white px-3 py-1 rounded-full text-sm font-medium">NumPy</span>
                 <span className="bg-primary-dark text-white px-3 py-1 rounded-full text-sm font-medium">PyTorch</span>
                 <span className="bg-primary-dark text-white px-3 py-1 rounded-full text-sm font-medium">Jupyter Notebook</span>
+                <span className="bg-primary-dark text-white px-3 py-1 rounded-full text-sm font-medium">Gradio</span>
               </div>
             </div>
             <div>
