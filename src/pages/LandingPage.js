@@ -44,7 +44,7 @@ const LandingPage = () => {
             </h1>
             <div className="space-y-4">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                A passionate <span className="text-primary font-semibold">Information Systems Management</span> student and the co-founder of <span className="text-accent font-semibold">yournee</span>.
+                A passionate <span className="text-primary font-semibold">Business Informatics</span> student.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                 Dedicated to building innovative and intelligent solutions.
@@ -67,7 +67,7 @@ const LandingPage = () => {
             </h1>
             <div className="space-y-4">
               <p className="text-xl xl:text-2xl text-gray-300 leading-relaxed">
-                A passionate <span className="text-primary font-semibold">Information Systems Management</span> student and the co-founder of <span className="text-accent font-semibold">yournee</span>.
+                A passionate <span className="text-primary font-semibold">Business Informatics</span> student.
               </p>
               <p className="text-lg xl:text-xl text-gray-400 leading-relaxed">
                 Dedicated to building innovative and intelligent solutions.

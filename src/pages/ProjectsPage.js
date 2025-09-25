@@ -5,6 +5,17 @@ const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Define custom project images stored in your repo
+  const projectImages = {
+    'Movie-Recommendation-System': '/images/projects/preview-movie-recommendation-system.png',
+    'Meal-Planner': '/images/projects/preview-meal-planner.png',
+    'portfolio': '/images/projects/preview-portfolio.png',
+    'MRI-Brain-Tumor-Detection': '/images/projects/preview-mri-brain-tumor-detection.jpg',
+    'neural-network': '/images/projects/preview-neural-network.png',
+    // Add more project-specific images as needed
+    // The key should match your GitHub repo name
+  };
+
   useEffect(() => {
     document.title = 'Timothy Ljunggren - Projects';
   }, []);
@@ -63,19 +74,32 @@ const ProjectsPage = () => {
             ])];
             const projectTopics = project.topics || [];
 
+            console.log(project.name);
+
             return (
               <div
                 key={project.id}
                 className="bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between transform hover:scale-105 transition-transform duration-300 overflow-hidden"
               >
-                <img
-                  src={`https://opengraph.githubassets.com/1/${project.owner.login}/${project.name}`}
-                  alt={`${formatProjectName(project.name)} preview`}
-                  className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
-                />
+                <div className="w-full relative" style={{ paddingBottom: '56.25%' }}>
+                  <img
+                    src={
+                      projectImages[project.name] || 
+                      `https://opengraph.githubassets.com/1/${project.owner.login}/${project.name}`
+                    }
+                    alt={`${formatProjectName(project.name)} preview`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={(e) => {
+                      // If custom image fails, try GitHub OpenGraph
+                      if (e.target.src !== `https://opengraph.githubassets.com/1/${project.owner.login}/${project.name}`) {
+                        e.target.src = `https://opengraph.githubassets.com/1/${project.owner.login}/${project.name}`;
+                      } else {
+                        // If GitHub image also fails, hide the image
+                        e.target.style.display = 'none';
+                      }
+                    }}
+                  />
+                </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <h2 className="text-2xl font-bold mb-2">{formatProjectName(project.name)}</h2>
                   <p className="text-gray-400 mb-4 flex-grow">{project.description || 'No description available.'}</p>

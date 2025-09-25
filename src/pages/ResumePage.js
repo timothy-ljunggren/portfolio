@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Mail, Phone, Linkedin, Github, Award, Star, Briefcase } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Award, Star, Briefcase, User, Code } from 'lucide-react';
 
 const ResumePage = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const ResumePage = () => {
       <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white">Timothy Ljunggren</h1>
-          <p className="text-xl text-gray-300 mt-2">Information Systems Management student, Co-founder & CEO</p>
+          <p className="text-xl text-gray-300 mt-2">Business Informatics student</p>
           <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 mt-4 text-gray-400">
             <a href="mailto:timothy@antimala.de" className="hover:text-primary flex items-center"><Mail className="mr-2" /> timothy@antimala.de</a>
             <a href="tel:+4915164581384" className="hover:text-primary flex items-center"><Phone className="mr-2" /> +49 1516 4581384</a>
@@ -21,32 +21,44 @@ const ResumePage = () => {
         </header>
 
         <section className="mb-10">
+          <h2 className="text-3xl font-bold border-b-2 border-primary pb-2 mb-6 flex items-center"><User className="mr-3" /> About</h2>
+          <div className="text-gray-300 space-y-4">
+            <p className="text-lg leading-relaxed text-justify">
+              Business Informatics student at TU Berlin with a strong foundation in computer science and mathematics. I bridge technology and business, combining technical expertise with strategic thinking to drive digital innovation. With leadership experience in retail and a growing portfolio of technical projects, I aim to create meaningful business solutions that support digital transformation. I thrive in collaborative environments where analytical skills and teamwork deliver real impact.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-10">
           <h2 className="text-3xl font-bold border-b-2 border-primary pb-2 mb-6 flex items-center"><Star className="mr-3" /> Education</h2>
           <div className="relative border-l-4 border-primary-dark pl-8 space-y-10 py-4">
             <div className="relative">
               <div className="absolute -left-[42px] top-1 w-4 h-4 bg-gray-800 border-4 border-primary rounded-full"></div>
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
                 <p className="text-sm font-medium text-gray-400 md:order-2">2025 - Present</p>
-                <h3 className="text-xl font-bold md:order-1">Technical University of Berlin</h3>
+                <h3 className="text-xl font-bold md:order-1">B.Sc. in Business Informatics</h3>
               </div>
-              <p className="text-lg text-gray-300">B.Sc. in Information Systems Management</p>
+              <p className="text-lg text-gray-300">Technical University of Berlin</p>
             </div>
             <div className="relative">
               <div className="absolute -left-[42px] top-1 w-4 h-4 bg-gray-800 border-4 border-primary rounded-full"></div>
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
                 <p className="text-sm font-medium text-gray-400 md:order-2">2024 - 2025</p>
-                <h3 className="text-xl font-bold md:order-1">Humboldt University of Berlin</h3>
+                <h3 className="text-xl font-bold md:order-1">B.Sc. in Computer Science, Mathematics, and Physics</h3>
               </div>
-              <p className="text-lg text-gray-300">B.Sc. in Computer Science, Mathematics, and Physics</p>
-              <p className="text-gray-400 mt-1">Transitioned to Information Systems Management to better align with personal interests and career aspirations.</p>
+              <p className="text-lg text-gray-300">Humboldt University of Berlin</p>
+              <p className="text-gray-400 mt-1">Grade before transition: 1.5</p>
+              <p className="text-gray-400 mt-1">Gained foundational knowledge in computer science, mathematics, and physics.<br/>Transitioned to Business Informatics to better align with personal interests and career aspirations.</p>
             </div>
             <div className="relative">
               <div className="absolute -left-[42px] top-1 w-4 h-4 bg-gray-800 border-4 border-primary rounded-full"></div>
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
                 <p className="text-sm font-medium text-gray-400 md:order-2">2024</p>
-                <h3 className="text-xl font-bold md:order-1">Kurt-Tucholsky-Oberschule, Berlin</h3>
+                <h3 className="text-xl font-bold md:order-1">Abitur (University Entrance Qualification)</h3>
               </div>
-              <p className="text-lg text-gray-300">Abitur (University Entrance Qualification) - Grade: 1.0</p>
+              <p className="text-lg text-gray-300">Kurt-Tucholsky-Oberschule, Berlin</p>
+              <p className="text-gray-400 mt-1">Grade: 1.0</p>
+              <p className="text-gray-400 mt-1">Advanced courses: Mathematics, English<br/>Exam subjects: Physics, History, Computer Science</p>
             </div>
           </div>
         </section>
@@ -57,27 +69,17 @@ const ResumePage = () => {
              <div className="relative">
                 <div className="absolute -left-[42px] top-1 w-4 h-4 bg-gray-800 border-4 border-primary rounded-full"></div>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
-                    <p className="text-sm font-medium text-gray-400 md:order-2">Jul 2025 - Present</p>
-                    <h3 className="text-xl font-bold md:order-1">Co-founder & CEO (Front-End & Machine Learning Expert)</h3>
-                </div>
-                <p className="text-md text-gray-400">yournee, Berlin</p>
-                <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
-                  <li>Spearheaded the development of a React Native application, focusing on intuitive UI/UX design to maximize user engagement.</li>
-                  <li>Established and managed robust CI/CD pipelines using Azure DevOps, automating the entire build, test, and release lifecycle.</li>
-                  <li>Championed agile methodologies, leading biweekly sprints to ensure timely delivery and cross-team synergy.</li>
-                  <li>Architected and deployed advanced recommender systems using Python, enhancing user personalization.</li>
-                </ul>
-            </div>
-             <div className="relative">
-                <div className="absolute -left-[42px] top-1 w-4 h-4 bg-gray-800 border-4 border-primary rounded-full"></div>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-baseline">
                     <p className="text-sm font-medium text-gray-400 md:order-2">Aug 2024 - Sep 2025</p>
                     <h3 className="text-xl font-bold md:order-1">Sales Associate & Acting Deputy Manager</h3>
                 </div>
                 <p className="text-md text-gray-400">Netto Marken-Discount, Berlin</p>
-                <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
-                  <li>Led and motivated a team of up to 5 employees, consistently achieving and exceeding sales goals.</li>
-                  <li>Oversaw daily store operations, including staff scheduling and resource allocation, to ensure seamless workflow.</li>
+                <p className="text-gray-300 mt-1">I managed daily store operations and acted as substitute for store or deputy managers, ensuring smooth workflows, team coordination, and achievement of sales and operational goals.</p>
+                <ul className="list-disc list-inside mt-2 text-gray-400 space-y-2 ml-6">
+                  <li><strong className='text-gray-300'>Led a team of up to 5</strong>, delegating tasks and monitoring performance to ensure continuity during management absences; motivated staff and resolved issues, achieving daily sales and service targets.</li>
+                  <li><strong className='text-gray-300'>Adapted staff assignments</strong> on short notice for absences or revenue shifts; reorganized shifts to maintain service quality and minimize disruption.</li>
+                  <li><strong className='text-gray-300'>Monitored inventory</strong> - through regular stock checks and reconciliations; applied systematic tracking to reduce shortages and write-offs.</li>
+                  <li><strong className='text-gray-300'>Trained and onboarded new employees</strong> in processes, cash handling, and compliance; provided feedback that improved efficiency and reduced onboarding time.</li>
+                  <li><strong className='text-gray-300'>Oversaw financial/operational processes</strong> including cash reconciliation, returns, and policy compliance; applied structured checks to safeguard accuracy and accountability.</li>
                 </ul>
             </div>
              <div className="relative">
@@ -87,8 +89,11 @@ const ResumePage = () => {
                     <h3 className="text-xl font-bold md:order-1">Sales Associate</h3>
                 </div>
                 <p className="text-md text-gray-400">Netto Marken-Discount, Berlin</p>
-                <ul className="list-disc list-inside mt-2 text-gray-300 space-y-1">
-                  <li>Provided exceptional customer service, resolving inquiries and issues promptly to maintain high levels of client satisfaction.</li>
+                <p className="text-gray-300 mt-1">Supported daily store operations with a focus on customer service, sales transactions, and maintaining product availability.</p>
+                <ul className="list-disc list-inside mt-2 text-gray-400 space-y-2 ml-6">
+                  <li>Operated checkout systems and handled cash transactions accurately.</li>
+                  <li>Restocked shelves and ensured product presentation met company standards.</li>
+                  <li>Assisted customers with inquiries and maintained a clean, organized store environment.</li>
                 </ul>
             </div>
           </div>
@@ -96,16 +101,28 @@ const ResumePage = () => {
 
         <section className="mb-10">
           <h2 className="text-3xl font-bold border-b-2 border-primary pb-2 mb-6 flex items-center"><Award className="mr-3" /> Certifications</h2>
-            <div className="text-lg text-gray-300 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <p>Abitur Prize in Mathematics - German Mathematical Society</p>
-                <p>Google AI Essentials - Google</p>
-                <p>Google Data Analytics (German) - Google</p>
-                <p>Google Project Management - Google</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gray-700/20 rounded-lg p-4 border-l-4 border-primary">
+              <h3 className="font-semibold text-white mb-1">Abitur Prize in Mathematics</h3>
+              <p className="text-gray-400 text-sm">German Mathematical Society</p>
             </div>
+            <div className="bg-gray-700/20 rounded-lg p-4 border-l-4 border-tertiary">
+              <h3 className="font-semibold text-white mb-1">Google AI Essentials</h3>
+              <p className="text-gray-400 text-sm">Google</p>
+            </div>
+            <div className="bg-gray-700/20 rounded-lg p-4 border-l-4 border-primary">
+              <h3 className="font-semibold text-white mb-1">Google Data Analytics (German)</h3>
+              <p className="text-gray-400 text-sm">Google</p>
+            </div>
+            <div className="bg-gray-700/20 rounded-lg p-4 border-l-4 border-accent">
+              <h3 className="font-semibold text-white mb-1">Google Project Management</h3>
+              <p className="text-gray-400 text-sm">Google</p>
+            </div>
+          </div>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold border-b-2 border-primary pb-2 mb-6">Skills & Expertise</h2>
+          <h2 className="text-3xl font-bold border-b-2 border-primary pb-2 mb-6 flex items-center"><Code className="mr-3" /> Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-3">Frontend Development</h3>
