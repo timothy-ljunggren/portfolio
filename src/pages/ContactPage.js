@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Mail, Phone, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactPage = () => {
   const [status, setStatus] = useState('');
@@ -8,6 +9,7 @@ const ContactPage = () => {
     name: '',
     email: '',
     message: '',
+    privacy: false,
   });
 
   useEffect(() => {
@@ -15,7 +17,11 @@ const ContactPage = () => {
   }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    const { id, value, type, checked } = e.target;
+    setFormData({ 
+      ...formData, 
+      [id]: type === 'checkbox' ? checked : value 
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -27,7 +33,7 @@ const ContactPage = () => {
         }
       });
       setStatus('SUCCESS');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', privacy: false });
     } catch (error) {
       setStatus('ERROR');
     }
@@ -37,7 +43,7 @@ const ContactPage = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-12">Contact Me</h1>
 
-      <div className="max-w-lg mx-auto mb-12 text-center">
+      <div className="max-w-xl mx-auto mb-12 text-center">
         <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-4">
           <a href="mailto:timothy@antimala.de" className="flex items-center space-x-2 text-lg hover:text-primary">
             <Mail size={24} />
@@ -54,61 +60,113 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <div className="max-w-lg mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
+      <div className="max-w-xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-lg font-medium mb-2">
-              Name
+              Name*
             </label>
             <input
               type="text"
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full bg-gray-700 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full bg-gray-700 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-gray-600 transition-colors"
               required
             />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-lg font-medium mb-2">
-              Email
+              E-Mail*
             </label>
             <input
               type="email"
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full bg-gray-700 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full bg-gray-700 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-gray-600 transition-colors"
               required
             />
           </div>
           <div className="mb-4">
             <label htmlFor="message" className="block text-lg font-medium mb-2">
-              Message
+              Message*
             </label>
             <textarea
               id="message"
-              rows="4"
+              rows="5"
               value={formData.message}
               onChange={handleChange}
-              className="w-full bg-gray-700 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full bg-gray-700 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-gray-600 transition-colors resize-y"
               required
             ></textarea>
           </div>
+
+          {/* Privacy Policy Consent */}
+          <div className="mb-6 p-4 bg-gray-700/50 rounded-lg border border-gray-600">
+            <h3 className="text-md font-medium mb-3 text-white">Datenschutz und Einwilligung</h3>
+            <p className="text-sm text-gray-300 mb-4 leading-relaxed">
+              Ihre Kontaktdaten werden über den Dienst Formspree an mich weitergeleitet und 
+              nur zur Bearbeitung Ihrer Anfrage verwendet. Die Verarbeitung erfolgt auf 
+              Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+            </p>
+            
+            <div className="flex items-start gap-3 mb-4">
+              <input
+                type="checkbox"
+                id="privacy"
+                checked={formData.privacy}
+                onChange={handleChange}
+                className="mt-1 w-4 h-4 text-primary bg-gray-600 border-gray-500 rounded focus:ring-primary focus:ring-2"
+                required
+              />
+              <label htmlFor="privacy" className="text-sm text-gray-300 leading-relaxed">
+                Ich bin damit einverstanden, dass meine Angaben aus dem Kontaktformular zur 
+                Bearbeitung meiner Anfrage erhoben und verarbeitet werden. 
+                Weitere Informationen finden Sie in unserer{' '}
+                <Link to="/privacy" className="text-blue-400 hover:text-blue-300 underline">
+                  Datenschutzerklärung
+                </Link>.
+              </label>
+            </div>
+            
+            <p className="text-xs text-gray-400">
+              <strong>Hinweis:</strong> Die Datenübertragung erfolgt über Formspree (USA). 
+              Weitere Details in deren{' '}
+              <a 
+                href="https://formspree.io/legal/privacy-policy/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                Datenschutzrichtlinie
+              </a>.
+            </p>
+          </div>
           {status === 'SUCCESS' && (
-            <p className="text-green-500 mb-4">Thanks for your message! I'll get back to you soon.</p>
+            <p className="text-green-500 mb-4 p-3 bg-green-500/10 rounded-md border border-green-500/20">
+              Vielen Dank für Ihre Nachricht! Ich werde mich schnellstmöglich bei Ihnen melden.
+            </p>
           )}
           {status === 'ERROR' && (
-            <p className="text-red-500 mb-4">Ooops! There was an error.</p>
+            <p className="text-red-500 mb-4 p-3 bg-red-500/10 rounded-md border border-red-500/20">
+              Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt per E-Mail.
+            </p>
           )}
           <button
             type="submit"
-            className="w-full bg-primary-dark hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-md transition-colors duration-300"
+            disabled={!formData.privacy}
+            className={`w-full font-bold py-3 px-4 rounded-md transition-all duration-300 ${
+              formData.privacy 
+                ? 'bg-primary-dark hover:bg-primary text-white cursor-pointer' 
+                : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+            }`}
           >
-            Send Message
+            Nachricht senden
           </button>
-          <p className="text-xs text-gray-500 mt-4 text-center">
-            This site uses Formspree for contact form submissions. By submitting this form, you acknowledge that your information will be transferred to Formspree for processing in accordance with their <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" className="underline">Privacy Policy</a>.
+          
+          <p className="text-xs text-gray-400 mt-3 text-center">
+            Ihre Daten werden SSL-verschlüsselt übertragen und gemäß DSGVO verarbeitet.
           </p>
         </form>
       </div>
