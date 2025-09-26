@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -12,8 +12,6 @@ import ImprintPage from './pages/ImprintPage';
 import './App.css';
 
 function AppContent() {
-  const location = useLocation();
-
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
