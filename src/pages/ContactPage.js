@@ -59,7 +59,7 @@ const ContactPage = () => {
             <Phone size={24} />
             <span>+49 1516 4581384</span>
           </a>
-          <a href="https://www.linkedin.com/in/timothy-ljunggren-27ab42263/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-lg hover:text-primary">
+          <a href="https://www.linkedin.com/in/timothy-ljunggren/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-lg hover:text-primary">
             <Linkedin size={24} />
             <span>LinkedIn</span>
           </a>

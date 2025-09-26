@@ -18,7 +18,7 @@ const LandingPage = () => {
     "url": "https://timothy-ljunggren.de",
     "image": "https://www.timothy-ljunggren.de/logo.svg",
     "sameAs": [
-      "https://www.linkedin.com/in/timothy-ljunggren-27ab42263/",
+      "https://www.linkedin.com/in/timothy-ljunggren/",
       "https://github.com/timothy-ljunggren"
     ],
     "alumniOf": {

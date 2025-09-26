@@ -21,7 +21,7 @@ const ResumePage = () => {
           <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 mt-4 text-gray-400">
             <a href="mailto:timothy@antimala.de" className="hover:text-primary flex items-center"><Mail className="mr-2" /> timothy@antimala.de</a>
             <a href="tel:+4915164581384" className="hover:text-primary flex items-center"><Phone className="mr-2" /> +49 1516 4581384</a>
-            <a href="https://www.linkedin.com/in/timothy-ljunggren-27ab42263/" target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center"><Linkedin className="mr-2" /> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/timothy-ljunggren/" target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center"><Linkedin className="mr-2" /> LinkedIn</a>
             <a href="https://github.com/timothy-ljunggren" target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center"><Github className="mr-2" /> GitHub</a>
           </div>
         </header>
