@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -8,8 +9,36 @@ const LandingPage = () => {
     document.title = 'Timothy Ljunggren - Home';
   }, []);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Timothy Ljunggren",
+    "jobTitle": "Business Informatics Student",
+    "description": "Passionate Business Informatics student specializing in React, Python, and Machine Learning",
+    "url": "https://timothy-ljunggren.de",
+    "image": "https://www.timothy-ljunggren.de/logo.svg",
+    "sameAs": [
+      "https://www.linkedin.com/in/timothy-ljunggren-27ab42263/",
+      "https://github.com/timothy-ljunggren"
+    ],
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Technical University of Berlin"
+    },
+    "knowsAbout": ["React", "Python", "Machine Learning", "Business Informatics", "Web Development"]
+  };
+
   return (
     <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 py-8 md:py-16">
+      <SEOHead 
+        title="Timothy Ljunggren - Business Informatics Student & Developer"
+        description="Passionate Business Informatics student at TU Berlin specializing in React, Python, and machine learning. Explore my innovative projects and technical expertise."
+        keywords="Timothy Ljunggren, Business Informatics, TU Berlin, React Developer, Python, Machine Learning, Portfolio, Berlin, Web Development"
+      />
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div className="max-w-7xl mx-auto w-full">
         {/* Mobile Layout - Stacked */}
         <div className="lg:hidden flex flex-col items-center space-y-12">

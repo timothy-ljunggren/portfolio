@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Mail, Phone, Linkedin, Github, Award, Star, Briefcase, User, Code } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 const ResumePage = () => {
   useEffect(() => {
@@ -8,6 +9,11 @@ const ResumePage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 font-sans">
+      <SEOHead 
+        title="Timothy Ljunggren - Resume | Business Informatics Student"
+        description="Download Timothy Ljunggren's resume. Business Informatics student with experience in React, Python, Machine Learning, leadership, and project management. Based in Berlin, Germany."
+        keywords="Timothy Ljunggren, Resume, CV, Business Informatics, TU Berlin, React, Python, Machine Learning, Leadership, Berlin, Developer"
+      />
       <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white">Timothy Ljunggren</h1>

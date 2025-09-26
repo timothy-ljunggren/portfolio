@@ -1,3 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /privacy
+Disallow: /imprint
+
+Sitemap: https://www.timothy-ljunggren.de/sitemap.xml

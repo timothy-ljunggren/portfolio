@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEOHead from '../components/SEOHead';
 
 const PrivacyPage = () => {
   useEffect(() => {
@@ -7,6 +8,11 @@ const PrivacyPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <SEOHead 
+        title="Datenschutzerklärung - Timothy Ljunggren"
+        description="Datenschutzerklärung für die Website von Timothy Ljunggren. Informationen über die Erhebung und Verarbeitung personenbezogener Daten."
+        keywords="Datenschutz, Privacy Policy, DSGVO, Timothy Ljunggren"
+      />
       <h1 className="text-4xl font-bold text-center mb-8">Datenschutzerklärung</h1>
       
       <div className="prose prose-invert max-w-none">

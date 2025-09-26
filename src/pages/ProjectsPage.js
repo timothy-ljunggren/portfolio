@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SEOHead from '../components/SEOHead';
 
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
@@ -62,6 +63,11 @@ const ProjectsPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <SEOHead 
+        title="Timothy Ljunggren - Projects | React, Python & Machine Learning"
+        description="Explore Timothy Ljunggren's software development projects including React web applications, Python machine learning models, and innovative solutions. View source code on GitHub."
+        keywords="Timothy Ljunggren, Projects, Portfolio, React Projects, Python Projects, Machine Learning, GitHub, Web Development, Software Development"
+      />
       <h1 className="text-4xl font-bold text-center mb-12">My Projects</h1>
       {loading ? (
         <p className="text-center">Loading projects...</p>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Mail, Phone, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEOHead from '../components/SEOHead';
 
 const ContactPage = () => {
   const [status, setStatus] = useState('');
@@ -41,6 +42,11 @@ const ContactPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <SEOHead 
+        title="Contact Timothy Ljunggren - Get In Touch"
+        description="Contact Timothy Ljunggren for collaboration opportunities, project inquiries, or professional connections. Business Informatics student and developer based in Berlin, Germany."
+        keywords="Contact Timothy Ljunggren, Business Inquiries, Collaboration, Developer Contact, Berlin, Email, LinkedIn"
+      />
       <h1 className="text-4xl font-bold text-center mb-12">Contact Me</h1>
 
       <div className="max-w-xl mx-auto mb-12 text-center">

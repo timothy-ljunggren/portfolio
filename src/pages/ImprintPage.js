@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEOHead from '../components/SEOHead';
 
 const ImprintPage = () => {
   useEffect(() => {
@@ -7,6 +8,11 @@ const ImprintPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <SEOHead 
+        title="Impressum - Timothy Ljunggren"
+        description="Impressum und rechtliche Angaben für die Website von Timothy Ljunggren, yournee GmbH, Berlin."
+        keywords="Impressum, Legal Notice, Timothy Ljunggren, yournee GmbH, Berlin"
+      />
       <h1 className="text-4xl font-bold text-center mb-8">Impressum</h1>
       
       <div className="prose prose-invert max-w-none">
